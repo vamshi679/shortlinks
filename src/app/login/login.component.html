@@ -1,0 +1,91 @@
+<div class="container-fluid">
+    <div class="spacer-lg"></div> 
+    <div class="text-center">
+        <p class="wt-600 p-1 mb-3 text-white bg-primary rounded d-inline " style="text-shadow: rgb(73, 70, 70);">
+            ShortLinks</p>
+        <!-- <div class="spacer-sm"></div> -->
+        <h5 class="text-muted mt-3">Sign in to shortlinks</h5>
+    </div>
+    <div class="spacer-xs"></div>
+    <div class="row d-flex justify-content-center">
+        <div>
+            <!-- card 1-->
+            <div class="card">
+                <div class="card-body">
+                    <!-- login form -->
+                    <form action="/action_page.php" [formGroup]="loginform" (ngSubmit)="login()">
+                        <div class="form-group">
+                            <label for="">Email Address</label>
+                            <input class="form-control form-control-sm" type="email" formControlName="userEmail">
+                            <span
+                                *ngIf="loginform.get('userEmail').touched && loginform.get('userEmail').hasError('required')">
+                                *this field is required
+                            </span>
+                            <span
+                                *ngIf="loginform.get('userEmail').touched && loginform.get('userEmail').hasError('email')">
+                                *Please enter valid email address
+                            </span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Password</label>
+                            <label for=""><a routerLink="/forgotpassword" style="margin-left: 65px;">Forgot password?</a></label>
+                            <div class="input-group input-group-sm">
+                                <input type="password" class="form-control" formControlName="userPwd" [type]="hide ? 'text': 'password'">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">
+                                        <i class="fas text-dark" id="heart" [ngClass]="{'fa-eye' : hide, 'fa-eye-slash' : !hide}"
+                                            (click)="showhide()"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <!-- <input class="form-control form-control-sm" type="password" formControlName="userPwd"> -->
+                            <span
+                                *ngIf="loginform.get('userPwd').touched && loginform.get('userPwd').hasError('required')">*
+                                this field is required
+                            </span>
+                        </div>
+
+                        <div>
+                            <button class="btn btn-block btn-primary p-1" type="submit" [disabled]=loginform.invalid>
+                                <span *ngIf="loading" class="spinner-border spinner-border-sm text-light"></span>
+                                {{btnText}}
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="spacer-sm"></div>
+            <!-- card 2 -->
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <div class="new text-center">
+                        <span class="text-dark">New to ShortLinks ? </span>
+                        <a routerLink="/register">create new</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="a text-center">
+                <a routerLink="/main">Back to Home</a>
+            </div>
+        </div>
+    </div>
+    <!-- {{loginform.value | json}} -->
+    <footer class="fixed-bottom">
+        <div class="container">
+            <hr>
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-5 text-center">
+                    <div class="a">
+                        <a class="p-1" href="#">Help?</a>
+                        <a class="p-1" href="#">Documentation</a>
+                        <a class="p-1" href="#">Privacy</a>
+                        <a class="p-1" href="#">Blog</a>
+                    </div>
+                    <p class="a text-center text-muted"> © 2020 shortlinks.io</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>

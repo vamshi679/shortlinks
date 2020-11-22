@@ -1,0 +1,91 @@
+<div class="container">
+    <div class="mt-md-5"></div>
+    <div class="spacer-md"></div>
+    <div class="row d-flex justify-content-center my-5">
+        <div>
+            <span class="text-white bg-primary text-center p-1 border rounded wt-600">shortlinks</span>
+            <div class="card shadow-sm">
+                <div class="card-header">
+                    <h4 class="wt-600 text-center">Reset password</h4>
+                </div>
+                <div class="card-body">
+                    <form action="" [formGroup]="resetForm" (ngSubmit)="reset()">
+                        <div class="form-group">
+                            <label for="">New password</label>
+                            <div class="input-group input-group-sm">
+                                <input type="password" class="form-control" id="userPwd" formControlName="userPwd"
+                                    [type]="hide ? 'text': 'password'">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">
+                                        <i class="fas text-dark" id="heart"
+                                            [ngClass]="{'fa-eye' : hide, 'fa-eye-slash' : !hide}"
+                                            (click)="showhide()"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <!-- <input type="password" class="form-control form-control-sm" formControlName="UserEmail"> -->
+                            <span
+                                *ngIf="resetForm.get('userPwd').touched && resetForm.get('userPwd').hasError('required')">
+                                *this field is required
+                            </span>
+                            <span
+                                *ngIf="resetForm.get('userPwd').touched && resetForm.get('userPwd').hasError('minlength')">
+                                *Password must be atleast 8 characters
+                            </span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Confirm Password</label>
+                            <div class="input-group input-group-sm">
+                                <input type="password" class="form-control" id="confirmPwd" formControlName="confirmPwd"
+                                    [type]="hidec ? 'text': 'password'">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">
+                                        <i class="fas text-dark" id="heart"
+                                            [ngClass]="{'fa-eye' : hidec, 'fa-eye-slash' : !hidec}"
+                                            (click)="showhidec()"></i>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <span
+                                *ngIf="resetForm.get('confirmPwd').touched && resetForm.get('confirmPwd').hasError('required')">
+                                *Confirm password is required
+                            </span>
+                            <span
+                                *ngIf="resetForm.get('confirmPwd').touched && resetForm.get('confirmPwd').hasError('passwordMismatch')">
+                                *Passwords Don't Match
+                            </span>
+                        </div>
+                        <div class="spacer-sm"></div>
+                        <div>
+                            <button class="btn btn-block btn-primary p-1" type="submit" [disabled]='resetForm.invalid'>
+                                <span *ngIf="loading" class="spinner-border spinner-border-sm text-light"></span>
+                                {{btnText}}
+                            </button>
+                        </div>
+                        <small class="a text-muted">Choose strong password to stay aware form hackers.</small>
+                    </form>
+
+                </div>
+            </div> 
+        </div>
+    </div>
+
+    <footer class="fixed-bottom">
+        <div class="container">
+            <hr>
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-5 text-center">
+                    <div class="a">
+                        <a class="p-1" href="#">Help?</a>
+                        <a class="p-1" href="#">Terms</a>
+                        <a class="p-1" href="#">Privacy</a>
+                        <a class="p-1" href="#">Blog</a>
+                        <p class="a text-center text-muted"> © 2020 shortlinks.io</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>

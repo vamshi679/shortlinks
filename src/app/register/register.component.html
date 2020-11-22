@@ -1,0 +1,131 @@
+<div class="container-fluid">
+    <div class="spacer-md"></div>
+    <div class="text-center">
+        <h3 class="text-muted">Sign up Here</h3>
+    </div>
+    <div class="spacer-xs"></div>
+    <div class="row d-flex justify-content-center">
+        <div class="content">
+            <div class="card">
+                <div class="card-body">
+                    <!-- registration form -->
+                    <form action="/action_page.php" [formGroup]="signupForm" (ngSubmit)="signup()">
+                        <div class="form-group">
+                            <label for="">UserName</label>
+                            <input class="form-control form-control-sm" type="text" formControlName="userName">
+                            <span
+                                *ngIf="signupForm.get('userName').touched && signupForm.get('userName').hasError('required')">
+                                *this field is required
+                            </span>
+                            <span
+                                *ngIf="signupForm.get('userName').touched && signupForm.get('userName').hasError('minlength')">
+                                *username : minimum 5 characters
+                            </span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Email Address</label>
+                            <input class="form-control form-control-sm" type="text" id="userEmail"
+                                formControlName="userEmail">
+                            <span
+                                *ngIf="signupForm.get('userEmail').touched && signupForm.get('userEmail').hasError('required')">
+                                *this field is required
+                            </span>
+                            <span
+                                *ngIf="signupForm.get('userEmail').touched && signupForm.get('userEmail').hasError('email')">
+                                *Please enter valid email address
+                            </span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Password</label>
+                            <div class="input-group input-group-sm">
+                                <input type="password" class="form-control" id="userPwd" formControlName="userPwd"
+                                    [type]="hide ? 'text': 'password'">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">
+                                        <i class="fas text-dark" id="heart"
+                                            [ngClass]="{'fa-eye' : hide, 'fa-eye-slash' : !hide}"
+                                            (click)="showhide()"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <!-- <input class="form-control form-control-sm" type="password" id="userPwd"
+                                formControlName="userPwd"> -->
+                            <span
+                                *ngIf="signupForm.get('userPwd').touched && signupForm.get('userPwd').hasError('required')">
+                                *this field is required
+                            </span>
+                            <span
+                                *ngIf="signupForm.get('userPwd').touched && signupForm.get('userPwd').hasError('minlength')">
+                                *Password must be atleast 8 characters
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Confirm Password</label>
+                            <div class="input-group input-group-sm">
+                                <input type="password" class="form-control" id="confirmPwd" formControlName="confirmPwd"
+                                    [type]="hidec ? 'text': 'password'">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">
+                                        <i class="fas text-dark" id="heart"
+                                            [ngClass]="{'fa-eye' : hidec, 'fa-eye-slash' : !hidec}"
+                                            (click)="showhidec()"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <!-- <input class="form-control form-control-sm" type="password" id="confirmPwd"
+                                formControlName="confirmPwd"> -->
+                            <span
+                                *ngIf="signupForm.get('confirmPwd').touched && signupForm.get('confirmPwd').hasError('required')">
+                                *Confirm password is required
+                            </span>
+                            <span
+                                *ngIf="signupForm.get('confirmPwd').touched && signupForm.get('confirmPwd').hasError('passwordMismatch')">
+                                *Passwords Don't Match
+                            </span>
+                        </div>
+
+                        <div>
+                            <button class="btn btn-block btn-primary p-1" type="submit" [disabled]='signupForm.invalid'>
+                                <span *ngIf="loading" class="spinner-border spinner-border-sm text-light"></span>
+                                {{btnText}}
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="spacer-xs"></div>
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <div class="new text-center">
+                        <span class="new text-dark">Already Registered ? </span>
+                        <a routerLink="/login">Sign In here.</a> <br>
+                        <a routerLink="/main">Back to Home</a>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <p class="a text-muted">By clicking “Sign up for ShortLinks”, you agree to our <a href="#">terms of
+                        service and privacy statement</a>.</p>
+            </div>
+        </div>
+        <!-- {{signupForm.value | json}} -->
+    </div>
+    <footer class="fixed-bottom">
+        <div class="container">
+            <hr>
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-5 text-center">
+                    <div class="a">
+                        <a class="p-1" href="#">Help?</a>
+                        <a class="p-1" href="#">Terms</a>
+                        <a class="p-1" href="#">Privacy</a>
+                        <a class="p-1" href="#">Blog</a>
+                        <p class="a text-center text-muted"> © 2020 shortlinks.io</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>

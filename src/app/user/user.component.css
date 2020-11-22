@@ -1,0 +1,31 @@
+.ptag {
+    box-sizing: border-box;
+    padding: 8px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: rgb(105, 147, 226);
+    font-size: 20px;
+}
+
+b {
+    color: rgb(105, 147, 226);
+}
+
+.card-title{
+    padding: 10px;
+    font-weight: 750;
+}
+
+table{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+label, .btn,.card-body {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.btn:focus{
+    box-shadow: none;
+}

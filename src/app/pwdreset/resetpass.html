@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="mt-md-5"></div>
+    <div class="spacer-md"></div>
+    <div class="row d-flex justify-content-center my-5">
+        <div>
+            <span class="text-white bg-primary text-center p-1 border rounded wt-600">shortlinks</span>
+            <div class="card shadow-sm">
+                <div class="card-header">
+                    <h4 class="wt-600 text-center">forgot password page</h4>
+                </div> 
+                <div class="card-body">
+                    <form action="">
+                        <div class="form-group">
+                            <label for="">Email address</label>
+                            <input type="email" class="form-control form-control-sm" required #email name="UserEmail">
+                            <small class="a text-muted">Enter your registered Email Address </small>
+                        </div>
+                        <div class="spacer-xs"></div>
+                        <div>
+                            <button class="btn btn-block btn-sm btn-primary" (click)="sendMail(email.value)">Reset</button>
+                            <button class="btn btn-sm btn-block btn-light" (click)="goToMain()" >I remember the password</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="fixed-bottom">
+        <div class="container">
+            <hr>
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-5 text-center">
+                    <div class="a">
+                        <a class="p-1" href="#">Help?</a>
+                        <a class="p-1" href="#">Terms</a>
+                        <a class="p-1" href="#">Privacy</a>
+                        <a class="p-1" href="#">Blog</a>
+                        <p class="a text-center text-muted"> © 2020 shortlinks.io</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>

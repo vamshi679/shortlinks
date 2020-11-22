@@ -1,0 +1,77 @@
+/* navbar */
+
+ul li a, h2 {
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.navbar-brand {
+    font-weight: 800;
+}
+
+.display {
+    font-size: 65px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: rgb(105, 147, 226);
+}
+
+.ptag {
+    box-sizing: border-box;
+    padding: 8px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: rgb(105, 147, 226);
+    font-size: 20px;
+}
+
+.col-md-5, .col-md-3, .col-md-4 {
+    box-sizing: border-box;
+}
+
+.card-title {
+    padding: 10px;
+    font-weight: 600;
+}
+
+label, .btn, .ptag1 {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 10px;
+}
+
+/* footer  */
+
+.ptag1 {
+    line-height: 1.5rem;
+}
+
+.a {
+    margin-top: .5rem;
+    font-weight: 650;
+    font-size: 13px;
+}
+
+footer {
+    padding-top: 2rem;
+}
+
+.copy {
+    opacity: 0.4;
+}
+
+.copy:hover {
+    opacity: 1;
+}
+
+@media screen and (max-width:480px) {
+    .display {
+        font-size: 50px;
+    }
+    .ptag {
+        margin: 0;
+    }
+    .card-title {
+        padding: 0;
+    }
+}

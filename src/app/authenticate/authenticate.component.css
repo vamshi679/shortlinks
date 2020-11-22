@@ -1,0 +1,28 @@
+.card{
+    width: 20rem;
+}
+
+.card-title {
+    padding: 6px;
+    font-weight: 600;
+} 
+
+.card-body,.btn{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* footer  */
+.ptag1 {
+    line-height: 1.5rem;
+}
+
+.a {
+    margin-top: 0.5rem;
+    font-weight: 650;
+    font-size: 12px;
+}
+
+footer {
+    padding-top: 2rem;
+}

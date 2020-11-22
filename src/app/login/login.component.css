@@ -1,0 +1,35 @@
+a:hover{
+    text-decoration: none;
+}
+
+.new,label{
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.card{ 
+    width: 18rem;
+}
+
+span{
+    color: red;
+    font-weight: 600;
+    font-size: 13px; 
+}
+
+
+/* footer  */
+.ptag1 {
+    line-height: 1.5rem;
+}
+
+.a {
+    margin-top: 0.5rem;
+    font-weight: 650;
+    font-size: 12px;
+}
+
+footer {
+    padding-top: 2rem;
+}
+

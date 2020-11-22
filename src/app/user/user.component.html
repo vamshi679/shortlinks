@@ -1,0 +1,128 @@
+<div class="container-fluid">
+    <div class="spacer-md"></div>
+
+    <div class="container-fluid">
+        <div class="row px-md-4">
+            <div class="col-12 d-flex justify-content-between">
+                <h5><b class="px-2">ShortLinks</b> <span class="ml-3">Dashboard</span></h5>
+                <button class="btn btn-sm btn-warning d-none d-sm-block" (click)="logoutUser()"> sign out </button>
+                <div class="btn-group d-block d-sm-none ">
+                    <button type="button" class="btn btn-sm" data-toggle="dropdown">
+                        <i class="fas fa-ellipsis-v"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <button class="dropdown-item" type="button">home</button>
+                        <button class="dropdown-item" type="button">profile</button>
+                        <button class="dropdown-item" type="button">profile</button>
+                        <button class="dropdown-item" type="button" (click)="logoutUser()"> sign out</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="spacer-md"></div>
+
+    <div class="row">
+        <div class="offset-md-2 col-md-8">
+            <div class="card bg-light">
+                <div class="card-body py-5">
+                    <form action="" [formGroup]="urlForm" (ngSubmit)="shorten()">
+                        <div class="form-group">
+                            <label for="">Enter any Url to shorten</label>
+                            <input type="text" class="form-control" formControlName="fullUrl">
+                            <div class="alert alert-primary text-center m-1 alert-dismissible fade show" *ngIf='hide'>
+                                <a class="alert-link" [href]=shortUrl>{{shortUrl}}</a>
+                                <span class="ml-3 copy" title="copy Url" data-toggle="tooltip">
+                                    <i class="far fa-copy" cdkCopyToClipboard="{{shortUrl}}"></i>
+                                </span>
+                                <button type="button" class="close" data-dismiss="alert">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button class="btn btn-primary mx-3" type="submit">{{btnText}}</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="spacer-md"></div>
+
+    <div class="container py-3">
+        <div lass="card-columns">
+
+            <div class="row d-flex justify-content-around">
+
+                <div class="card text-center mb-3">
+                    <div lass="card-body">
+                        <h3 class="card-title">Recent Activity</h3>
+                        <div class="table-responsive">
+                            <table class="table table-striped" *ngIf="urlArray">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">copy</th>
+                                        <th scope="col">Short Url</th>
+                                        <th scope="col">Created</th>
+                                        <th scope="col">Clicks</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor='let url of urlArray'>
+                                        <td scope="row">
+                                            <button class="btn btn-sm bg-light rounded-pill" title="copy Url"
+                                                data-toggle="tooltip">
+                                                <i class="far fa-copy" cdkCopyToClipboard="{{url.shortUrl}}"></i>
+                                            </button>
+                                        </td>
+                                        <td>{{url.shortUrl}}</td>
+                                        <td>{{url.createdOn}}</td>
+                                        <td>{{url.clicks}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title text-center">Account Information</h4>
+                        <table class="table table-borderless" *ngIf="user">
+                            <tr>
+                                <th>Username:</th>
+                                <td>{{user.userName}}</td>
+                            </tr>
+                            <tr>
+                                <th>Email:</th>
+                                <td>{{user.userEmail}}</td>
+                            </tr>
+                            <tr>
+                                <th>Created on:</th>
+                                <td>{{user.createdOn}}</td>
+                            </tr>
+                            <tr>
+                                <th>Transformations:</th>
+                                <td>10/5000</td>
+                            </tr>
+                            <tr>
+                                <th>Account status:</th>
+                                <td><span class="text-success">Verified</span></td>
+                            </tr>
+                        </table>
+                        <div class="text-center">
+                            <button class="btn btn-block btn-warning">edit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+</div>

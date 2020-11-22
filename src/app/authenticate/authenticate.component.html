@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="spacer-lg"></div> 
+    <div class="spacer-lg"></div>
+    <div class="mt-4 d-flex justify-content-center align-items-center">
+        <div class="content">
+            <span class="text-white bg-primary text-center p-1 border rounded wt-600">shortlinks</span>
+            <div class="card">
+                <div class="card-header">
+                    <h4>Account Activation page</h4>
+                </div>
+                <div class="card-body">
+                    <span class="text-center text-danger mt-3 mb-1 wt-600">*Disclaimer*</span><br>
+                    <div>
+                        <p>Click on the Activate button to activate your account with shortlinks</p>
+                    </div>
+                    <div class="m-2">
+                        <form action="" #check="ngForm">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" name="agreeTandC" class="custom-control-input" id="customCheck1"
+                                    ngModel required>
+                                <label class="custom-control-label" for="customCheck1">
+                                    Agree to <a href="#">terms & conditions</a>
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                    <button class="btn btn-block btn-primary" (click)="accept()" [disabled]='check.invalid'>
+                        Activate myaccount
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <footer class="fixed-bottom">
+        <div class="container">
+            <hr>
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-5 text-center">
+                    <div class="a">
+                        <a class="p-1" href="#">Help?</a>
+                        <a class="p-1" href="#">Terms</a>
+                        <a class="p-1" href="#">Privacy</a>
+                        <a class="p-1" href="#">Blog</a>
+                        <p class="a text-center text-muted"> © 2020 shortlinks.io</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>

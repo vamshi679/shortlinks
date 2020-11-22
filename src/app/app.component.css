@@ -1,0 +1,27 @@
+ul li a, h2 {
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.navbar-brand {
+    font-weight: 800;
+}
+
+/* .col-md-3, .col-md-4 {
+    box-sizing: border-box;
+} */
+
+.navbar-toggler-icon{
+    text-decoration: none;
+}
+
+/* .a {
+    margin-top: 1rem;
+    font-weight: 650;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+footer {
+    padding-top: 2rem;
+} */
