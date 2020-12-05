@@ -42,7 +42,8 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, './dist/shortlinks')));
 
 // assigning port
-app.listen(process.env.PORT, () => {
+let port = process.env.PORT || 8081;
+app.listen(port, () => {
     console.log('server started...');
 })
 
